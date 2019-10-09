@@ -496,7 +496,7 @@ int main(int argc, char* argv[])
 			{
 				//printf("video no %d size %d \n",v_stsz_no+1,v_stsz_sample_size[v_stsz_no]);
 			 	stream_read(fd, frame_buff, v_stsz_sample_size[v_stsz_no]);
-		 		rtpSendH264Frame(socket, CLIENT_IP, CLIENT_PORT, rtpPacket, frame_buff + 4, v_stsz_sample_size[v_stsz_no] - 4);
+		 		rtpSendH264Frame(a_socket, CLIENT_IP, CLIENT_PORT, rtpPacket, frame_buff + 4, v_stsz_sample_size[v_stsz_no] - 4);
 			 	rtpPacket->rtpHeader.timestamp += 90000/FPS;
 				usleep(1000*1000/FPS);
 				v_chunk_no++;
